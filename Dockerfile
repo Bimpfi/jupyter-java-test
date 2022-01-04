@@ -3,6 +3,10 @@ FROM continuumio/anaconda3:2021.11
 RUN apt-get update
 RUN apt-get install unzip
 
+RUN wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
+RUN unzip ijava-1.3.0.zip
+RUN python install.py --sys-prefix
+
 ARG NB_USER=java
 ARG NB_UID=1000
 ENV USER ${NB_USER}
@@ -21,8 +25,4 @@ USER ${NB_USER}
 
 WORKDIR /home/${NB_USER}/
 
-RUN pip install --no-cache-dir notebook
-
-RUN wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
-RUN unzip ijava-1.3.0.zip
-RUN python install.py --sys-prefix
+# RUN pip install --no-cache-dir notebook
