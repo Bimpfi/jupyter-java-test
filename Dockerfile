@@ -16,6 +16,8 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
+WORKDIR /home/${NB_USER}/
+
 RUN pip install --no-cache-dir notebook
 
 RUN wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
