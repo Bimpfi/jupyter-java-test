@@ -2,3 +2,7 @@
 
 pip install kotlin-jupyter-kernel
 python -m kotlin_kernel fix-kernelspec-location
+
+wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
+unzip ijava-1.3.0.zip
+python install.py --sys-prefix
