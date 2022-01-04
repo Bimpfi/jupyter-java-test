@@ -5,5 +5,5 @@
 
 wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
 unzip ijava-1.3.0.zip
-# python install.py --sys-prefix
-sudo python install.py
+python install.py --sys-prefix
+# sudo python install.py
