@@ -1,5 +1,8 @@
 FROM continuumio/anaconda3:2021.11
 
+RUN apt-get update
+RUN apt-get install unzip
+
 ARG NB_USER=java
 ARG NB_UID=1000
 ENV USER ${NB_USER}
