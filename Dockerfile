@@ -31,6 +31,6 @@ USER root
 RUN chmod 644 -R ${HOME}
 USER ${NB_USER}
 
-WORKDIR /home/${NB_USER}/
+WORKDIR ${HOME}
 
 # RUN pip install --no-cache-dir notebook
