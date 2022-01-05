@@ -28,10 +28,13 @@ RUN adduser --disabled-password \
 COPY ./notebooks ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
-RUN chmod 444 ${HOME}/*.ipynb
-# RUN chmod 644 -R ${HOME}
+# RUN chmod 444 ${HOME}/*.ipynb
+RUN chmod 444 -R ${HOME}/*.ipynb
 USER ${NB_USER}
 
 WORKDIR ${HOME}
 
-CMD [ "jupyter", "notebook" ]
+EXPOSE 8888:8888
+
+CMD [ "jupyter", "notebook", "--ip=0.0.0.0",  "--port=8888", "--NotebookApp.token='hs-coburg-prog1'" ]
+# CMD [ "jupyter", "lab"]
