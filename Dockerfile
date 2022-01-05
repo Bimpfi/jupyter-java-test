@@ -1,7 +1,7 @@
 FROM continuumio/anaconda3:2021.11
 
 RUN apt-get update
-RUN apt-get install unzip texlive texlive-latex-extra pandoc
+RUN apt-get install unzip texlive texlive-latex-extra texlive-generic-extra texlive-xetex pandoc
 
 RUN wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
 RUN unzip ijava-1.3.0.zip
