@@ -27,7 +27,8 @@ RUN adduser --disabled-password \
 
 COPY ./notebooks ${HOME}
 USER root
-RUN chown -R ${NB_UID} ${HOME}
+# RUN chown -R ${NB_UID} ${HOME}
+RUN chmod 644 -R ${HOME}
 USER ${NB_USER}
 
 WORKDIR /home/${NB_USER}/
