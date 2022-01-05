@@ -1,7 +1,7 @@
 FROM continuumio/anaconda3:2021.11
 
 RUN apt-get update
-RUN apt-get install unzip
+RUN apt-get install unzip texlive texlive-latex-extra pandoc
 
 RUN wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
 RUN unzip ijava-1.3.0.zip
@@ -31,6 +31,5 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
 WORKDIR /home/${NB_USER}/
-RUN mkdir test
 
 # RUN pip install --no-cache-dir notebook
