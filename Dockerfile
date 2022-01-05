@@ -8,7 +8,7 @@ RUN unzip ijava-1.3.0.zip
 RUN python install.py --sys-prefix
 
 RUN wget https://download.java.net/java/GA/jdk17.0.1/2a2082e5a09d4267845be086888add4f/12/GPL/openjdk-17.0.1_linux-x64_bin.tar.gz
-RUN tar -xvzf openjdk-17.0.1_linux-x64_bin.tar.gz /usr/
+RUN tar -xvzf openjdk-17.0.1_linux-x64_bin.tar.gz -C /usr/
 ENV JAVA_HOME=/usr/jdk-17.0.1/bin/
 ENV PATH=${JAVA_HOME}:${PATH}
 
