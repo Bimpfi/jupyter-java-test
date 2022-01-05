@@ -31,5 +31,6 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
 WORKDIR /home/${NB_USER}/
+RUN mkdir test
 
 # RUN pip install --no-cache-dir notebook
