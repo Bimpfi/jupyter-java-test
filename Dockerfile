@@ -27,10 +27,8 @@ RUN adduser --disabled-password \
 
 COPY ./notebooks ${HOME}
 USER root
-# RUN chown -R ${NB_UID} ${HOME}
-RUN chmod 644 -R ${HOME}
+RUN chown -R ${NB_UID} ${HOME}
+# RUN chmod 644 -R ${HOME}
 USER ${NB_USER}
 
 WORKDIR ${HOME}
-
-# RUN pip install --no-cache-dir notebook
