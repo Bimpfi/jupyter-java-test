@@ -28,7 +28,10 @@ RUN adduser --disabled-password \
 COPY ./notebooks ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
+RUN chmod 444 ${HOME}/*.ipynb
 # RUN chmod 644 -R ${HOME}
 USER ${NB_USER}
 
 WORKDIR ${HOME}
+
+CMD [ "jupyter", "notebook" ]
